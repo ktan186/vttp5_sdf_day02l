@@ -4,6 +4,9 @@ import java.util.List;
 import object.Computer;
 import object.Desktop;
 import object.Laptop;
+import vehicle.Car;
+import vehicle.Truck;
+import vehicle.Vehicle;
 
 
 public class App {
@@ -39,13 +42,6 @@ public class App {
         laptop01.displayspec();
         laptop01.shutdown();
         
-    //     //    public Laptop(String cpu, String model, Integer ram, Integer yearMade) {
-    //     super(cpu, model, ram, yearMade);
-    // }
-
-    // public Laptop(String cpu, String model, Integer ram, Integer yearMade, String operatingSystem, Integer weight,
-    //         String battery, String screenSize) 
-
         Desktop desktop01 = new Desktop("4GHz 8 core", "Asus", 16, 2024, "Windows 11", "14 inch", true);
         desktop01.startup();
         desktop01.displayspec();
@@ -63,8 +59,42 @@ public class App {
             machines.get(i).displayspec();
             
         }
+
+    
+    List<Vehicle> vehicles = new ArrayList<>();
+    vehicles.add(new Vehicle("1 Series", "BMW", 2013));
+    vehicles.add(new Car("100", "Audi", 1994, "Sedan", 5));
+    vehicles.add(new Truck("Chavdar M65", "Chavdar", 2000, 6000.0));
+
+    for (Vehicle v : vehicles) {
+        whatIsMyType(v);
+    }
+
+    // javac --source-path . vehicle/*.java ./*.java -d target
+    // java -cp target App .
+
+    // package (in target folder)
+    // jar -c -v -f sdf02l.jar -e App
+
+    // run package (in targer folder)
+    // jar -jar target/sdf02l.jar
+
+    // run package (in project root folder)
+    // jar -jar target/sdf02l.jar
+
     }
     
+    // slide 14
+    public static void whatIsMyType(Object obj) {
+        if (obj instanceof Car) {
+            System.out.println("This is a car");
+        } else if (obj instanceof Truck) {
+            System.out.println("This is a truck");
+        } else {
+            System.out.println("This is a vehicle");
+        }
+
+    }
 
 
 }

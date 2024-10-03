@@ -70,6 +70,20 @@ public class Laptop extends Computer {
         System.out.println("Shutting down Laptop...");
     }
 
+    public Integer computeArithmatic() {
+        Integer a = 1;
+        Integer b = 2;
+        Integer sum;
+        sum = a + b;
+        return sum;
+    }
+
+    public Integer computerArithmatic(Integer a, Integer b) {
+        Integer sum;
+        sum = a + b;
+        return sum;
+    }
+
     @Override
     public void displayspec() {
         System.out.println("This laptop specifications:");
